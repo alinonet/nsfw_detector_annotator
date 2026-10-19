@@ -1,6 +1,7 @@
 # Ignore run time generated artifacts
 uploaded_media/
 feedbacks.json
+# .streamlit/secrets.toml
 
 # Ignore pycache
 app/__pycache__/

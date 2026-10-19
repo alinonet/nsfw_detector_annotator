@@ -112,6 +112,18 @@ nsfw-detector-annotator/
 
     * Use the slider to adjust the blur intensity.
 
+### Admin Panel
+
+To enable the admin panel, create `.streamlit/secrets.toml` in the project root
+with the password you choose:
+
+```toml
+admin_password = "your-password"
+```
+
+The admin panel remains unavailable until this secret is configured. The secrets
+file is ignored by Git; do not commit passwords or share them publicly.
+
 ---
 
 ## Models

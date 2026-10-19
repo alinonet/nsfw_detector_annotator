@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit.errors import StreamlitSecretNotFoundError
 import os
 import zipfile
 from io import BytesIO
@@ -59,7 +60,11 @@ async def admin_panel():
     st.markdown("#### Admin Panel")
 
     admin_password = st.text_input("Enter Admin Password", type="password")
-    correct_password = st.secrets["admin_password"]
+    try:
+        correct_password = st.secrets["admin_password"]
+    except (StreamlitSecretNotFoundError, KeyError):
+        st.info("Admin panel unavailable. Configure admin_password in .streamlit/secrets.toml.")
+        return
 
     if admin_password == correct_password:
         print("[INFO] Access granted to admin panel.")
