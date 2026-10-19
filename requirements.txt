@@ -1,4 +1,3 @@
-opencv_python==5.0.0.93
 opencv_python_headless==5.0.0.93
 Pillow==12.3.0
 pillow_heif==1.7.0
