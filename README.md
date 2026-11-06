@@ -77,15 +77,23 @@ nsfw-detector-annotator/
    ```bash
    git clone https://github.com/Forenche/nsfw_detector_annotator.git
    cd nsfw_detector_annotator
+   ```
 
 2. **Set Up a Virtual Environment** (Optional but Recommended):
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
 3. **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
+   pip uninstall -y opencv-python
+   pip install --force-reinstall --no-deps opencv-python-headless==5.0.0.93
+   ```
+
+   Ultralytics installs the GUI OpenCV wheel as a dependency. Replace it with
+   the headless wheel to avoid requiring the system library `libGL.so.1`.
 
 ---
 
